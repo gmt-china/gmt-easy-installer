@@ -14,17 +14,23 @@
 1. 下载自己的Linux发行版所对应的安装脚本，并执行以安装依赖
 
    ~~~
-   bash ./XXXX-installer.sh | tee install.log
+   bash ./XXXX-installer.sh
    ~~~
 
 2. 执行GMT安装脚本
 
    ~~~
-   bash ./gmt-5.2.1-installer.sh | tee install.log
+   bash ./gmt-5.2.1-installer.sh
    ~~~
 
-3. 等待安装完成，检查最终是否显示GMT版本号并成功绘制图片
-4. 实际使用时可能需要重新 `source ~/.bashrc` 或者退出重新登陆或者重启，使得环境变量生效
+3. 等待安装完成，实际使用时可能需要重新 `source ~/.bashrc` 或者退出重新登陆或者重启，使得环境变量生效
+
+4. 测试是否安装正常
+
+   ~~~
+   gmt --version
+   gmt pscoast -Rg -JA280/30/3.5i -Bg -Dc -A1000 -Gnavy -P -V > GMT_test.ps
+   ~~~
 
 ### 额外的说明
 
@@ -35,3 +41,13 @@
 1. 直接点击项目主页上的“Download ZIP”按钮
 2. 使用 `git clone https://github.com/gmt-china/gmt-easy-installer.git`
 3. 点击要下载的脚本，在新页面的“Raw”按钮上右键保存
+
+#### 原理介绍
+
+其实GMT的安装很简单，在各个平台上的安装方法是完全一样的，区别在于不同的发行版要安装的包的名称不同。因而 `gmt-5.2.1-installer.sh` 是通用的，而 `XXXX-installer.sh` 则是不同的平台有不同的安装脚本。
+
+首先执行自己平台对应的脚本以安装GMT所需的依赖，然后再执行 `gmt-5.2.1-installer.sh`，该脚本中首先下载GMT安装包，然后解压，修改配置，检查依赖是否满足，最后安装。
+
+#### 加速下载
+
+脚本会使用 `wget` 命令从GMT官网下载三个GMT安装包。如果觉得下载太慢，可以使用其他方法预先下载好脚本中指定的安装包，将其放在与脚本同一目录下。此时 `wget` 在下载数据时会发现安装包已经下载完成，就会自动跳过数据下载这一步骤。
