@@ -11,7 +11,7 @@
 2. 当前用户应具有root权限（即可以使用 `sudo` 来安装软件）
 3. 除用户自己外，无人可以为使用该脚本而导致的任何问题负责
 4. `pass` 表示在该系统下安装通过并提供快速安装脚本
-5. `fail` 表示在该系统下安装失败，多数情况下是因为依赖关系无法满足，但用户依然可以通过自行编译解决依赖关系来安装GMT。这种情况下不提供快速安装脚本
+5. `fail` 表示在该系统下安装失败，不提供快速安装脚本
 6. 欢迎用户在多个不同的系统上进行测试
 
 ### 平台测试
@@ -20,6 +20,7 @@
 
 ![Ubuntu 14.04](https://img.shields.io/badge/Ubuntu%2014.04-pass-green.svg)
 ![Ubuntu 15.10](https://img.shields.io/badge/Ubuntu%2015.10-pass-green.svg)
+![Ubuntu 16.04](https://img.shields.io/badge/Ubuntu%2016.04-fail-red.svg)
 ![CentOS 7.2](https://img.shields.io/badge/CentOS%207.2-pass-green.svg)
 ![CentOS 6.7](https://img.shields.io/badge/CentOS%206.7-pass-green.svg)
 ![Fedora 23](https://img.shields.io/badge/Fedora%2023-pass-green.svg)
