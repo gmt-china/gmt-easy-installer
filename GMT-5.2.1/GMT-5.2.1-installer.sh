@@ -9,6 +9,14 @@ wget -nv -c ftp://ftp.soest.hawaii.edu/gmt/gmt-${GMT_VERSION}-src.tar.gz
 wget -nv -c ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-${GSHHG_VERSION}.tar.gz
 wget -nv -c ftp://ftp.soest.hawaii.edu/gmt/dcw-gmt-${DCW_VERSION}.tar.gz
 
+# Verify the integrity of files
+if ! md5sum --status -c md5sums.md5; then
+    echo "#############################################################"
+    echo "# Error in downloading files!                               #"
+    echo "#############################################################"
+    exit
+fi
+
 tar -xf gmt-${GMT_VERSION}-src.tar.gz
 tar -xf gshhg-gmt-${GSHHG_VERSION}.tar.gz
 tar -xf dcw-gmt-${DCW_VERSION}.tar.gz
