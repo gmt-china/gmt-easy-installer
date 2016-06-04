@@ -1,5 +1,6 @@
 ## GMT快速安装脚本
 
+[![Travis](https://travis-ci.org/gmt-china/gmt-easy-installer.svg)]()
 [![GMT Version](https://img.shields.io/badge/GMT-5.2.1-green.svg)]()
 [![license](https://img.shields.io/github/license/gmt-china/gmt-easy-installer.svg?maxAge=2592000)]()
 
