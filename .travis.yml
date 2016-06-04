@@ -1,0 +1,18 @@
+sudo: required
+services:
+  - docker
+
+env:
+  matrix:
+    - OS=CentOS-6.7
+    - OS=CentOS-7.2
+    - OS=Ubuntu-14.04.4
+    - OS=Ubuntu-15.10
+    - OS=Ubuntu-16.04
+    - OS=Fedora-22
+    - OS=Fedora-23
+    - OS=Debian-7.10
+    - OS=Debian-8.4
+
+script:
+    - bash test-in-docker.sh ${OS}
