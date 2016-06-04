@@ -18,32 +18,37 @@
 
 #### GMT 5.2.1
 
-![Ubuntu 14.04](https://img.shields.io/badge/Ubuntu%2014.04-pass-green.svg)
-![Ubuntu 15.10](https://img.shields.io/badge/Ubuntu%2015.10-pass-green.svg)
-![Ubuntu 16.04](https://img.shields.io/badge/Ubuntu%2016.04-fail-red.svg)
-![CentOS 7.2](https://img.shields.io/badge/CentOS%207.2-pass-green.svg)
-![CentOS 6.7](https://img.shields.io/badge/CentOS%206.7-pass-green.svg)
-![Fedora 23](https://img.shields.io/badge/Fedora%2023-pass-green.svg)
+| 发行版       | 是否通过 | 说明                                     |
+|--------------|----------|------------------------------------------|
+| CentOS 6.7   | ✓        | `FFTW` 以及 `GLIB_THREAD` 并行功能被禁用 |
+| CentOS 7.2   | ✓        |                                          |
+| Ubuntu 14.04 | ✓        |                                          |
+| Ubuntu 15.10 | ✓        |                                          |
+| Ubuntu 16.04 | ✓        | 源码有BUG，因而对源码打了补丁            |
+| Fedora 22    | ✓        |                                          |
+| Fedora 23    | ✓        |                                          |
+| Debian 7.10  | ✓        |                                          |
+| Debian 8.4   | ✓        |                                          |
 
 ### 使用方法
 
-1. 下载自己的Linux发行版所对应的安装脚本，并执行以安装依赖
+1. 下载GMT安装脚本 `GMT-x.x.x-installer.sh` 和自己的Linux发行版对应的安装脚本
+
+2. 执行自己的Linux发行版所对应的安装脚本以安装依赖
 
    ~~~
    bash ./XXXX-installer.sh
    ~~~
 
-   若安装脚本在执行的最后给出了警告信息，请按照警告信息修改GMT安装脚本 `GMT-x.x.x-installer.sh`
-
-2. 执行GMT安装脚本
+3. 执行GMT安装脚本
 
    ~~~
    bash ./GMT-x.x.x-installer.sh
    ~~~
 
-3. 等待安装完成，实际使用时可能需要重新 `source ~/.bashrc` 或者退出重新登陆或者重启，使得环境变量生效
+4. 等待安装完成，实际使用时可能需要重新 `source ~/.bashrc` 或者退出重新登陆或者重启，使得环境变量生效
 
-4. 测试是否安装正常
+5. 测试是否安装正常
 
    ~~~
    gmt --version
@@ -68,4 +73,4 @@
 
 #### 加速下载
 
-脚本会使用 `wget` 命令从GMT官网下载三个GMT安装包。如果觉得下载太慢，可以使用其他方法预先下载好脚本中指定的安装包，将其放在与脚本同一目录下。此时 `wget` 在下载数据时会发现安装包已经下载完成，就会自动跳过数据下载这一步骤。
+脚本会使用 `curl` 命令从GMT官网下载三个GMT安装包。如果觉得下载太慢，可以使用其他方法预先下载好脚本中指定的安装包，将其放在与脚本同一目录下。此时 `curl` 在下载数据时会发现安装包已经下载完成，就会自动跳过数据下载这一步骤。
