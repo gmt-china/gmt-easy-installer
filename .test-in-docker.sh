@@ -1,5 +1,5 @@
 #!/bin/sh
-GMT_version=5.2.1
+GMT_version=5.3.1
 OS=$1
 
 if [[ $# -eq 0 ]] ; then
