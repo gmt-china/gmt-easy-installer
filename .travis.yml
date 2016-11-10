@@ -15,4 +15,4 @@ env:
     - OS=Debian-8.4
 
 script:
-    - bash test-in-docker.sh ${OS}
+    - bash .test-in-docker.sh ${OS}
