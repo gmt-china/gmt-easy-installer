@@ -1,7 +1,7 @@
 ## GMT快速安装脚本
 
 [![Travis](https://travis-ci.org/gmt-china/gmt-easy-installer.svg)](https://travis-ci.org/gmt-china/gmt-easy-installer)
-[![GMT Version](https://img.shields.io/badge/GMT-5.2.1-green.svg)](http://gmt.soest.hawaii.edu/)
+[![GMT Version](https://img.shields.io/badge/GMT-5.3.2-green.svg)](http://gmt.soest.hawaii.edu/)
 [![license](https://img.shields.io/github/license/gmt-china/gmt-easy-installer.svg)](https://github.com/gmt-china/gmt-easy-installer/blob/master/LICENSE)
 
 本项目旨在为GMT用户提供GMT最新版本的快速安装脚本。
