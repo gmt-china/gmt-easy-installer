@@ -1,18 +1,26 @@
 sudo: required
+language: python
+python:
+  - '3.6'
 services:
   - docker
 
 env:
   matrix:
-    - OS=CentOS-6.7
-    - OS=CentOS-7.2
-    - OS=Ubuntu-14.04.4
-    - OS=Ubuntu-15.10
-    - OS=Ubuntu-16.04
-    - OS=Fedora-22
-    - OS=Fedora-23
-    - OS=Debian-7.10
-    - OS=Debian-8.4
+    - OS=centos:6
+    - OS=centos:7
+    - OS=ubuntu:14.04
+    - OS=ubuntu:15.10
+    - OS=ubuntu:16.04
+    - OS=ubuntu:16.10
+    - OS=ubuntu:17.04
+    - OS=fedora:22
+    - OS=fedora:23
+    - OS=fedora:24
+    - OS=fedora:25
+    - OS=debian:7
+    - OS=debian:8
+    - OS=debian:9
 
 script:
-    - bash .test-in-docker.sh ${OS}
+  - python .run-docker.py ${OS}
