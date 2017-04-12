@@ -4,7 +4,7 @@
 [![GMT Version](https://img.shields.io/badge/GMT-5.3.3-green.svg)](http://gmt.soest.hawaii.edu/)
 [![license](https://img.shields.io/github/license/gmt-china/gmt-easy-installer.svg)](https://github.com/gmt-china/gmt-easy-installer/blob/master/LICENSE)
 
-本项目旨在为GMT用户提供GMT最新版本的快速安装脚本。
+本项目旨在为GMT用户提供GMT **最新版本** 的快速安装脚本。
 
 ### 注意事项
 
@@ -15,19 +15,12 @@
 
 ### 平台测试
 
-#### GMT 5.3.3
+GMT 5.3.3 在如下平台下测试通过:
 
-| 发行版       | 是否通过 | 说明                                     |
-|--------------|----------|------------------------------------------|
-| CentOS 6.7   | ✓        | `FFTW` 以及 `GLIB_THREAD` 并行功能被禁用 |
-| CentOS 7.2   | ✓        |                                          |
-| Ubuntu 14.04 | ✓        |                                          |
-| Ubuntu 15.10 | ✓        |                                          |
-| Ubuntu 16.04 | ✓        | 源码有BUG，因而对源码打了补丁            |
-| Fedora 22    | ✓        |                                          |
-| Fedora 23    | ✓        |                                          |
-| Debian 7.10  | ✓        |                                          |
-| Debian 8.4   | ✓        |                                          |
+- centos 6, 7
+- fedora 22, 23, 24, 25
+- ubuntu 14.04, 15.10, 16.04, 16.10, 17.04
+- debian 7, 8, 9
 
 ### 使用方法
 
