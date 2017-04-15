@@ -24,8 +24,8 @@ GMT 5.3.3 在如下平台下测试通过:
 
 ### 使用方法
 
-1. 下载GMT安装脚本 `GMT-installer.sh` 、 `md5sums.md5`和自己的Linux发行版对应的
-   安装脚本，并保存到同一目录下
+1. 下载GMT安装脚本 `GMT-installer.sh` 和自己的Linux发行版对应的安装脚本，
+   并保存到同一目录下
 
 2. 执行自己的Linux发行版所对应的安装脚本以安装依赖
 
@@ -75,5 +75,5 @@ GMT 5.3.3 在如下平台下测试通过:
 当 GMT 新版本发布时，应修改如下三个地方：
 
 1. `GMT-installer.sh` 中的版本信息
+2. `GMT-installer.sh` 中的md5值
 2. `README.md` 中的版本信息
-3. `md5sums.md5` 中的 md5 值

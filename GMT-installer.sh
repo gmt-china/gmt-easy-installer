@@ -11,6 +11,13 @@ curl -C - -O ${GMT_MIRROR}/gmt-${GMT_VERSION}-src.tar.gz
 curl -C - -O ${GMT_MIRROR}/gshhg-gmt-${GSHHG_VERSION}.tar.gz
 curl -C - -O ${GMT_MIRROR}/dcw-gmt-${DCW_VERSION}.tar.gz
 
+# write md5sum value to file
+cat << EOF > md5sums.md5
+45c99d30026742dbc0b1644ea64f496d  dcw-gmt-1.1.2.tar.gz
+5801fa79dc21dcf2c82637672c4443fd  gmt-5.3.3-src.tar.gz
+108fd757939d3e5f8eaf385e185d6d14  gshhg-gmt-2.3.6.tar.gz
+EOF
+
 # Verify the integrity of files
 if ! md5sum --status -c md5sums.md5; then
     echo "#############################################################"
