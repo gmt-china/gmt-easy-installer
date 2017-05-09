@@ -1,21 +1,33 @@
 #!/bin/bash
+
+# Basic Information
 GMT_VERSION=5.3.3
 GSHHG_VERSION=2.3.6
 DCW_VERSION=1.1.2
 GMT_INSTALL=/opt/GMT-${GMT_VERSION}
 #GMT_MIRROR=ftp://ftp.soest.hawaii.edu/gmt
 GMT_MIRROR=http://mirrors.ustc.edu.cn/gmt/
+CURL_OPTIONS="-C - -O --fail -#"
 
-echo "Downloading files..."
-curl -C - -O ${GMT_MIRROR}/gmt-${GMT_VERSION}-src.tar.gz
-curl -C - -O ${GMT_MIRROR}/gshhg-gmt-${GSHHG_VERSION}.tar.gz
-curl -C - -O ${GMT_MIRROR}/dcw-gmt-${DCW_VERSION}.tar.gz
+# download files
+echo "Downloading gmt-${GMT_VERSION}-src.tar.gz:"
+if ! curl ${CURL_OPTIONS} ${GMT_MIRROR}/gmt-${GMT_VERSION}-src.tar.gz; then
+    curl ${CURL_OPTIONS} ${GMT_MIRROR}/legacy/gmt-${GMT_VERSION}-src.tar.gz
+fi
+echo "Downloading gshhg-gmt-${GSHHG_VERSION}.tar.gz:"
+if ! curl ${CURL_OPTIONS} ${GMT_MIRROR}/gshhg-gmt-${GSHHG_VERSION}.tar.gz; then
+    curl ${CURL_OPTIONS} ${GMT_MIRROR}/legacy/gshhg-gmt-${GSHHG_VERSION}.tar.gz
+fi
+echo "Downloading dcw-gmt-${DCW_VERSION}.tar.gz:"
+if ! curl ${CURL_OPTIONS} ${GMT_MIRROR}/dcw-gmt-${DCW_VERSION}.tar.gz; then
+    curl ${CURL_OPTIONS} ${GMT_MIRROR}/legacy/dcw-gmt-${DCW_VERSION}.tar.gz
+fi
 
 # write md5sum value to file
 cat << EOF > md5sums.md5
-45c99d30026742dbc0b1644ea64f496d  dcw-gmt-1.1.2.tar.gz
-5801fa79dc21dcf2c82637672c4443fd  gmt-5.3.3-src.tar.gz
-108fd757939d3e5f8eaf385e185d6d14  gshhg-gmt-2.3.6.tar.gz
+45c99d30026742dbc0b1644ea64f496d  dcw-gmt-${DCW_VERSION}.tar.gz
+5801fa79dc21dcf2c82637672c4443fd  gmt-${GMT_VERSION}-src.tar.gz
+108fd757939d3e5f8eaf385e185d6d14  gshhg-gmt-${GSHHG_VERSION}.tar.gz
 EOF
 
 # Verify the integrity of files
@@ -26,6 +38,7 @@ if ! md5sum --status -c md5sums.md5; then
     exit
 fi
 
+# Not start to install
 tar -xf gmt-${GMT_VERSION}-src.tar.gz
 tar -xf gshhg-gmt-${GSHHG_VERSION}.tar.gz
 tar -xf dcw-gmt-${DCW_VERSION}.tar.gz
@@ -50,6 +63,7 @@ make
 sudo make install
 cd ../..
 
+# Configuration
 echo "export GMT5HOME=${GMT_INSTALL}" >> ~/.bashrc
 echo 'export PATH=${GMT5HOME}/bin:$PATH' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64' >> ~/.bashrc
