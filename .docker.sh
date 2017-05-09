@@ -1,5 +1,5 @@
 #!/bin/sh
-GMT_version=5.3.3
+GMT_version=5.4.0
 BASE_dir=/gmt-easy-installer
 GMT_installer=GMT-installer.sh
 
