@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Basic Information
-GMT_VERSION=5.4.0
+GMT_VERSION=5.4.1
 GSHHG_VERSION=2.3.6
 DCW_VERSION=1.1.2
 GMT_INSTALL=/opt/GMT-${GMT_VERSION}
