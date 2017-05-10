@@ -26,7 +26,7 @@ fi
 # write md5sum value to file
 cat << EOF > md5sums.md5
 45c99d30026742dbc0b1644ea64f496d  dcw-gmt-${DCW_VERSION}.tar.gz
-4d91d0f359f47d5d448ffde80313cf41  gmt-${GMT_VERSION}-src.tar.gz
+e143577396937809ff845f50bd3b0094  gmt-${GMT_VERSION}-src.tar.gz
 108fd757939d3e5f8eaf385e185d6d14  gshhg-gmt-${GSHHG_VERSION}.tar.gz
 EOF
 
