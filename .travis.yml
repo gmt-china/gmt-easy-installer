@@ -14,10 +14,9 @@ env:
     - OS=ubuntu:16.04
     - OS=ubuntu:16.10
     - OS=ubuntu:17.04
-    - OS=fedora:22
-    - OS=fedora:23
     - OS=fedora:24
     - OS=fedora:25
+    - OS=fedora:26
     - OS=debian:7
     - OS=debian:8
     - OS=debian:9
