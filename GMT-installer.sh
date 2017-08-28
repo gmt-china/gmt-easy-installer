@@ -63,7 +63,20 @@ make
 sudo make install
 cd ../..
 
-# Configuration
-echo "export GMT5HOME=${GMT_INSTALL}" >> ~/.bashrc
-echo 'export PATH=${GMT5HOME}/bin:$PATH' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64' >> ~/.bashrc
+# Add enviromental variables to shell startup file
+current_shell=$(basename $SHELL)
+if [ $current_shell == "bash" ]; then
+    startup_file="${HOME}/.bashrc"
+elif [ $current_shell == "zsh" ]; then
+    startup_file="${HOME}/.zshrc"
+else
+    startup_file="${HOME}/.bashrc"
+fi
+echo "Adding GMT related enviromental variables to $startup_file"
+echo "    export GMT5HOME=${GMT_INSTALL}"
+echo '    export PATH=${GMT5HOME}/bin:$PATH'
+echo '    export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64'
+
+echo "export GMT5HOME=${GMT_INSTALL}" >> $startup_file
+echo 'export PATH=${GMT5HOME}/bin:$PATH' >> $startup_file
+echo 'export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${GMT5HOME}/lib64' >> $startup_file
