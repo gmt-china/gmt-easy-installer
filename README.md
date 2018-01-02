@@ -1,7 +1,7 @@
 ## GMT快速安装脚本
 
 [![Travis](https://travis-ci.org/gmt-china/gmt-easy-installer.svg)](https://travis-ci.org/gmt-china/gmt-easy-installer)
-[![GMT Version](https://img.shields.io/badge/GMT-5.4.2-green.svg)](http://gmt.soest.hawaii.edu/)
+[![GMT Version](https://img.shields.io/badge/GMT-5.4.3-green.svg)](http://gmt.soest.hawaii.edu/)
 [![license](https://img.shields.io/github/license/gmt-china/gmt-easy-installer.svg)](https://github.com/gmt-china/gmt-easy-installer/blob/master/LICENSE)
 
 本项目旨在为GMT用户提供GMT **最新版本** 的快速安装脚本。
@@ -15,11 +15,11 @@
 
 ### 平台测试
 
-GMT 5.4.2 在如下平台下测试通过:
+GMT 5.4.3 在如下平台下测试通过:
 
 - centos 6, 7
-- fedora 24, 25, 26
-- ubuntu 14.04, 15.10, 16.04, 16.10, 17.04
+- fedora 24, 25, 26, 27
+- ubuntu 14.04, 16.04, 16.10, 17.04, 17.10
 - debian 7, 8, 9
 
 ### 使用方法
@@ -77,3 +77,4 @@ GMT 5.4.2 在如下平台下测试通过:
 1. `GMT-installer.sh` 中的版本信息
 2. `GMT-installer.sh` 中的md5值
 3. `README.md` 中的版本信息
+4. `.docker.sh` 中的版本信息

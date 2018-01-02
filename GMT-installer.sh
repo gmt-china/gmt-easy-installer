@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Basic Information
-GMT_VERSION=5.4.2
+GMT_VERSION=5.4.3
 GSHHG_VERSION=2.3.7
 DCW_VERSION=1.1.2
 GMT_INSTALL=/opt/GMT-${GMT_VERSION}
-#GMT_MIRROR=ftp://ftp.soest.hawaii.edu/gmt
-GMT_MIRROR=http://mirrors.ustc.edu.cn/gmt/
+GMT_MIRROR=ftp://ftp.soest.hawaii.edu/gmt
+#GMT_MIRROR=http://mirrors.ustc.edu.cn/gmt/
 CURL_OPTIONS="-C - -O --fail -#"
 
 # download files
@@ -26,7 +26,7 @@ fi
 # write md5sum value to file
 cat << EOF > md5sums.md5
 45c99d30026742dbc0b1644ea64f496d  dcw-gmt-${DCW_VERSION}.tar.gz
-7bab16610c12eb054d1e7b1c6ef8b194  gmt-${GMT_VERSION}-src.tar.gz
+ff36a14b78d938e42d85046082d6ddeb  gmt-${GMT_VERSION}-src.tar.gz
 8ee2653f9daf84d49fefbf990bbfa1e7  gshhg-gmt-${GSHHG_VERSION}.tar.gz
 EOF
 
