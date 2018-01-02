@@ -5,8 +5,8 @@ GMT_VERSION=5.4.3
 GSHHG_VERSION=2.3.7
 DCW_VERSION=1.1.2
 GMT_INSTALL=/opt/GMT-${GMT_VERSION}
-GMT_MIRROR=ftp://ftp.soest.hawaii.edu/gmt
-#GMT_MIRROR=http://mirrors.ustc.edu.cn/gmt/
+#GMT_MIRROR=ftp://ftp.soest.hawaii.edu/gmt
+GMT_MIRROR=http://mirrors.ustc.edu.cn/gmt/
 CURL_OPTIONS="-C - -O --fail -#"
 
 # download files
